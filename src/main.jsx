@@ -11,10 +11,20 @@ const colors = {
     600: "#9d4edd",
     500: "#c77dff",
   },
+  background: {
+    light: "#FFFDE7", // Very light cream color
+  },
 };
 
 const theme = extendTheme({
   colors,
+  styles: {
+    global: {
+      "html, body": {
+        backgroundColor: "background.light",
+      },
+    },
+  },
   config: {
     initialColorMode: "light",
     useSystemColorMode: false,
