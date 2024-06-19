@@ -8,6 +8,7 @@ import OrderStatus from "./pages/OrderStatus.jsx";
 import POS from "./pages/POS.jsx";
 import Settings from "./pages/Settings.jsx";
 import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/pos" element={<POS />} />
         <Route exact path="/settings" element={<Settings />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
