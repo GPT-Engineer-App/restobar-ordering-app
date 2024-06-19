@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" bg="purple.50">
       <VStack spacing={4}>
         <SimpleGrid columns={2} spacing={4}>
           <Link as={NavLink} to="/menu">
