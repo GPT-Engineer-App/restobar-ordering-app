@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Heading, VStack, HStack, Button, Input, Select, SimpleGrid, Image, Text } from "@chakra-ui/react";
+import { Box, Heading, VStack, HStack, Button, Input, SimpleGrid, Image, Text } from "@chakra-ui/react";
 
 const POS = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -12,7 +12,6 @@ const POS = () => {
     { name: "White Source Pasta", category: "Main Course", image: "/images/white-source-pasta.jpg" },
     { name: "Farm Ville Pizza", category: "Starter", image: "/images/farm-ville-pizza.jpg" },
     { name: "Shot of Whiskey", category: "Beverages", image: "/images/whiskey.jpg" },
-    // Add more items as needed
   ];
 
   const filteredItems = menuItems.filter(item => 
