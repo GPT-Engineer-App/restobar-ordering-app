@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Box, Flex, Link, IconButton, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure } from "@chakra-ui/react";
+import { Box, Flex, Link, IconButton, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, Avatar, Menu, MenuButton, MenuList, MenuItem, Badge, Image } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaBell, FaUser } from "react-icons/fa";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -18,6 +18,25 @@ const Navbar = () => {
           _hover={{ bg: "transparent" }}
           onClick={onOpen}
         />
+        <Image src="/path/to/logo.png" alt="CrazyTime RestoBar" boxSize="50px" />
+        <Flex align="center">
+          <IconButton
+            icon={<FaBell />}
+            aria-label="Notifications"
+            color="white"
+            bg="transparent"
+            _hover={{ bg: "transparent" }}
+            mr={4}
+          />
+          <Menu>
+            <MenuButton as={IconButton} icon={<Avatar icon={<FaUser />} />} bg="transparent" _hover={{ bg: "transparent" }} />
+            <MenuList>
+              <MenuItem>Profile</MenuItem>
+              <MenuItem>Settings</MenuItem>
+              <MenuItem>Log Out</MenuItem>
+            </MenuList>
+          </Menu>
+        </Flex>
         <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
           <DrawerOverlay />
           <DrawerContent>
