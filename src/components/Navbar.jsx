@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Flex, Link, IconButton, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, Avatar, Menu, MenuButton, MenuList, MenuItem, Badge, Image } from "@chakra-ui/react";
+import { Box, Flex, Link, IconButton, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, Avatar, Menu, MenuButton, MenuList, MenuItem, Badge, Image, Heading } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaBell, FaUser } from "react-icons/fa";
 
@@ -18,6 +18,9 @@ const Navbar = () => {
           _hover={{ bg: "transparent" }}
           onClick={onOpen}
         />
+        <Heading as="h1" size="lg" color="white" ml={4}>
+          CrazyTime Order Management
+        </Heading>
         <Image src="/path/to/logo.png" alt="CrazyTime RestoBar" boxSize="50px" />
         <Flex align="center">
           <IconButton
