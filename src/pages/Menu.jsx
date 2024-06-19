@@ -11,11 +11,11 @@ const Menu = () => {
     <Box p={4}>
       <Heading as="h1" mb={4}>Menu</Heading>
       {categories.map((category) => (
-        <Box key={category.name} mb={6}>
+        <Box key={category.name} mb={6} bg="white">
           <Heading as="h2" size="lg" mb={4}>{category.name}</Heading>
           <SimpleGrid columns={3} spacing={4}>
             {category.items.map((item) => (
-              <Box key={item.name} p={4} borderWidth="1px" borderRadius="md">
+              <Box key={item.name} p={4} borderWidth="1px" borderRadius="md" bg="white">
                 <Image src={item.image} alt={item.name} mb={4} />
                 <Heading as="h3" size="md">{item.name}</Heading>
                 <Text>{item.price}</Text>
