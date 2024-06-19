@@ -39,7 +39,7 @@ const OrderStatus = () => {
     <Box p={4}>
       <Heading as="h1" mb={4}>Order Status</Heading>
       <VStack spacing={8}>
-        <Box w="100%" shadow="xl">
+        <Box p={4} m={4} w="100%" shadow="xl">
           <Heading as="h2" size="lg" mb={4}>Kitchen</Heading>
           <SimpleGrid columns={3} spacing={4}>
             {kitchenOrders.map((order) => (
@@ -53,7 +53,7 @@ const OrderStatus = () => {
             ))}
           </SimpleGrid>
         </Box>
-        <Box w="100%" shadow="xl">
+        <Box p={4} m={4} w="100%" shadow="xl">
           <Heading as="h2" size="lg" mb={4}>Bar</Heading>
           <SimpleGrid columns={3} spacing={4}>
             {barOrders.map((order) => (
@@ -67,7 +67,7 @@ const OrderStatus = () => {
             ))}
           </SimpleGrid>
         </Box>
-        <Box w="100%" shadow="xl">
+        <Box p={4} m={4} w="100%" shadow="xl">
           <Heading as="h2" size="lg" mb={4}>Tables</Heading>
           <SimpleGrid columns={4} spacing={4}>
             {tableOrders.map((order) => (
