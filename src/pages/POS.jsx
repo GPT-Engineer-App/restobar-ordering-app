@@ -8,10 +8,10 @@ const POS = () => {
 
   const categories = ["All", "Popular", "Starter", "Main Course", "Dessert", "Beverages"];
   const menuItems = [
-    { name: "Cream Pancake", category: "Dessert", image: "/images/cream-pancake.jpg" },
-    { name: "White Source Pasta", category: "Main Course", image: "/images/white-source-pasta.jpg" },
-    { name: "Farm Ville Pizza", category: "Starter", image: "/images/farm-ville-pizza.jpg" },
-    { name: "Shot of Whiskey", category: "Beverages", image: "/images/whiskey.jpg" },
+    { name: "Cream Pancake", category: "Dessert", image: "/images/cream-pancake.jpg", color: "red" },
+    { name: "White Source Pasta", category: "Main Course", image: "/images/white-source-pasta.jpg", color: "orange" },
+    { name: "Farm Ville Pizza", category: "Starter", image: "/images/farm-ville-pizza.jpg", color: "green" },
+    { name: "Shot of Whiskey", category: "Beverages", image: "/images/whiskey.jpg", color: "blue" },
   ];
 
   const filteredItems = menuItems.filter(item => 
@@ -37,7 +37,7 @@ const POS = () => {
   };
 
   return (
-    <Box p={4}>
+    <Box p={4} bg="white">
       <Heading as="h1" mb={4}>POS System</Heading>
       <VStack spacing={4} align="start">
         <Input 
@@ -65,7 +65,7 @@ const POS = () => {
               borderRadius="md" 
               onClick={() => addToOrder(item)}
               cursor="pointer"
-              bg="white"
+              bg={item.color}
             >
               <Image src={item.image} alt={item.name} mb={4} />
               <Heading as="h3" size="md">{item.name}</Heading>

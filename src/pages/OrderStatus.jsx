@@ -39,11 +39,11 @@ const OrderStatus = () => {
     <Box p={4}>
       <Heading as="h1" mb={4}>Order Status</Heading>
       <VStack spacing={8}>
-        <Box p={4} m={4} w="100%" shadow="xl">
+        <Box p={4} m={4} w="100%" shadow="xl" bg="white">
           <Heading as="h2" size="lg" mb={4}>Kitchen</Heading>
           <SimpleGrid columns={3} spacing={4}>
             {kitchenOrders.map((order) => (
-              <Box key={order.id} bg="white" p={4} borderRadius="md">
+              <Box key={order.id} bg={order.color} p={4} borderRadius="md">
                 <Heading as="h3" size="md">Table {order.table}</Heading>
                 {order.items.map((item, index) => (
                   <Text key={index}>{item}</Text>
@@ -53,11 +53,11 @@ const OrderStatus = () => {
             ))}
           </SimpleGrid>
         </Box>
-        <Box p={4} m={4} w="100%" shadow="xl">
+        <Box p={4} m={4} w="100%" shadow="xl" bg="white">
           <Heading as="h2" size="lg" mb={4}>Bar</Heading>
           <SimpleGrid columns={3} spacing={4}>
             {barOrders.map((order) => (
-              <Box key={order.id} bg="white" p={4} borderRadius="md">
+              <Box key={order.id} bg={order.color} p={4} borderRadius="md">
                 <Heading as="h3" size="md">Table {order.table}</Heading>
                 {order.items.map((item, index) => (
                   <Text key={index}>{item}</Text>
@@ -67,11 +67,11 @@ const OrderStatus = () => {
             ))}
           </SimpleGrid>
         </Box>
-        <Box p={4} m={4} w="100%" shadow="xl">
+        <Box p={4} m={4} w="100%" shadow="xl" bg="white">
           <Heading as="h2" size="lg" mb={4}>Tables</Heading>
           <SimpleGrid columns={4} spacing={4}>
             {tableOrders.map((order) => (
-              <Box key={order.id} bg="white" p={4} borderRadius="md">
+              <Box key={order.id} bg={order.color} p={4} borderRadius="md">
                 <Heading as="h3" size="md">Table {order.table}</Heading>
                 <Text>{order.status}</Text>
                 <Text>{order.time}</Text>
