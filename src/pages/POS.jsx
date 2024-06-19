@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Heading, VStack, HStack, Button, Input, SimpleGrid, Image, Text } from "@chakra-ui/react";
+import { Box, Heading, VStack, HStack, Button, Input, SimpleGrid, Image, Text, NumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper } from "@chakra-ui/react";
 
 const POS = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -20,7 +20,20 @@ const POS = () => {
   );
 
   const addToOrder = (item) => {
-    setOrder([...order, item]);
+    const existingItem = order.find(orderItem => orderItem.name === item.name);
+    if (existingItem) {
+      setOrder(order.map(orderItem => 
+        orderItem.name === item.name ? { ...orderItem, quantity: orderItem.quantity + 1 } : orderItem
+      ));
+    } else {
+      setOrder([...order, { ...item, quantity: 1 }]);
+    }
+  };
+
+  const updateQuantity = (item, quantity) => {
+    setOrder(order.map(orderItem => 
+      orderItem.name === item.name ? { ...orderItem, quantity: quantity } : orderItem
+    ));
   };
 
   return (
@@ -61,7 +74,20 @@ const POS = () => {
         <Box>
           <Heading as="h2" size="md">Order Summary</Heading>
           {order.map((item, index) => (
-            <Text key={index}>{item.name}</Text>
+            <HStack key={index} spacing={4} align="center">
+              <Text>{item.name}</Text>
+              <NumberInput 
+                value={item.quantity} 
+                min={1} 
+                onChange={(value) => updateQuantity(item, parseInt(value))}
+              >
+                <NumberInputField />
+                <NumberInputStepper>
+                  <NumberIncrementStepper />
+                  <NumberDecrementStepper />
+                </NumberInputStepper>
+              </NumberInput>
+            </HStack>
           ))}
         </Box>
         <Button colorScheme="teal">Place Order</Button>
