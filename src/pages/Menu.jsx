@@ -15,7 +15,7 @@ const Menu = () => {
           <Heading as="h2" size="lg" mb={4}>{category.name}</Heading>
           <SimpleGrid columns={3} spacing={4}>
             {category.items.map((item) => (
-              <Box key={item.name} p={4} borderWidth="1px" borderRadius="md" bg={item.color}>
+              <Box key={item.name} p={4} borderWidth="1px" borderRadius="md" bg="white">
                 <Image src={item.image} alt={item.name} mb={4} />
                 <Heading as="h3" size="md">{item.name}</Heading>
                 <Text>{item.price}</Text>

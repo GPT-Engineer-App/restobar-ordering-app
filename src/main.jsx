@@ -12,7 +12,7 @@ const colors = {
     500: "#c77dff",
   },
   background: {
-    light: "#FFFDE7", // Very light cream color
+    light: "#D3D3D3", // Light grey color
   },
 };
 
