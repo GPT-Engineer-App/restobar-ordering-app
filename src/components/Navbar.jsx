@@ -8,7 +8,7 @@ const Navbar = () => {
   const [placement, setPlacement] = useState("left");
 
   return (
-    <Box bg="purple.500" p={4}>
+    <Box bg="purple.500" p={4} position="sticky" top={0} zIndex={1000}>
       <Flex justify="space-between" align="center">
         <IconButton
           icon={<FaBars />}

@@ -5,7 +5,7 @@ const Footer = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box bg="purple.500" p={4} mt="auto">
+    <Box bg="purple.500" p={4} mt="auto" position="sticky" bottom={0} zIndex={1000}>
       <Flex justify="space-around" align="center">
         <Link href="mailto:contact@crazytime.com" isExternal>
           <IconButton
