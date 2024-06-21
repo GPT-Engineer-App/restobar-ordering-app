@@ -149,7 +149,7 @@ const OrderTaking = () => {
             </WrapItem>
           ))}
         </Wrap>
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={4}>
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={4}>
           {filteredItems.map(item => (
             <Box 
               key={item.name} 
@@ -160,8 +160,9 @@ const OrderTaking = () => {
               cursor="pointer"
               bg={bg}
             >
-              <Image src={item.image} alt={item.name} mb={4} />
+              <Image src={item.image} alt={item.name} mb={4} boxSize="150px" objectFit="cover" />
               <Heading as="h3" size="md">{item.name}</Heading>
+              <Text>{item.category}</Text>
             </Box>
           ))}
         </SimpleGrid>
