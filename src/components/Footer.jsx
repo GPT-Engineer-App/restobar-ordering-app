@@ -5,13 +5,13 @@ const Footer = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box bg="purple.500" p={4} mt="auto" position="sticky" bottom={0} zIndex={1000}>
+    <Box bg={colorMode === "light" ? "purple.500" : "gray.800"} p={4} mt="auto" position="sticky" bottom={0} zIndex={1000}>
       <Flex justify="space-around" align="center">
         <Link href="mailto:contact@crazytime.com" isExternal>
           <IconButton
             icon={<FaEnvelope />}
             aria-label="Email"
-            color="white"
+            color={colorMode === "light" ? "white" : "gray.200"}
             bg="transparent"
             _hover={{ bg: "transparent" }}
           />
@@ -20,7 +20,7 @@ const Footer = () => {
           <IconButton
             icon={<FaComments />}
             aria-label="Chat"
-            color="white"
+            color={colorMode === "light" ? "white" : "gray.200"}
             bg="transparent"
             _hover={{ bg: "transparent" }}
           />
@@ -29,7 +29,7 @@ const Footer = () => {
           <IconButton
             icon={<FaPhone />}
             aria-label="Call"
-            color="white"
+            color={colorMode === "light" ? "white" : "gray.200"}
             bg="transparent"
             _hover={{ bg: "transparent" }}
           />
@@ -38,7 +38,7 @@ const Footer = () => {
           icon={colorMode === "light" ? <FaMoon /> : <FaSun />}
           aria-label="Toggle Theme"
           onClick={toggleColorMode}
-          color="white"
+          color={colorMode === "light" ? "white" : "gray.200"}
           bg="transparent"
           _hover={{ bg: "transparent" }}
         />
