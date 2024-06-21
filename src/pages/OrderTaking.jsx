@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Heading, VStack, HStack, Button, Input, SimpleGrid, Image, Text } from "@chakra-ui/react";
+import { Box, Heading, VStack, HStack, Button, Input, SimpleGrid, Image, Text, Wrap, WrapItem } from "@chakra-ui/react";
 
 const OrderTaking = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -131,18 +131,19 @@ const OrderTaking = () => {
           value={searchQuery} 
           onChange={(e) => setSearchQuery(e.target.value)} 
         />
-        <HStack spacing={4}>
+        <Wrap spacing={4}>
           {categories.map(category => (
-            <Button 
-              key={category} 
-              onClick={() => setSelectedCategory(category)} 
-              colorScheme={selectedCategory === category ? "teal" : "gray"}
-            >
-              {category}
-            </Button>
+            <WrapItem key={category}>
+              <Button 
+                onClick={() => setSelectedCategory(category)} 
+                colorScheme={selectedCategory === category ? "teal" : "gray"}
+              >
+                {category}
+              </Button>
+            </WrapItem>
           ))}
-        </HStack>
-        <SimpleGrid columns={3} spacing={4}>
+        </Wrap>
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={4}>
           {filteredItems.map(item => (
             <Box 
               key={item.name} 
