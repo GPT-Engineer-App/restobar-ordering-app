@@ -49,16 +49,13 @@ const Navbar = () => {
             <DrawerBody>
               <Flex direction="column" align="start">
                 <Link as={NavLink} to="/" color="black" _hover={{ textDecoration: "none" }} onClick={onClose}>
-                  Home
+                  Bar
                 </Link>
-                <Link as={NavLink} to="/menu" color="black" _hover={{ textDecoration: "none" }} onClick={onClose}>
-                  Menu
+                <Link as={NavLink} to="/kitchen" color="black" _hover={{ textDecoration: "none" }} onClick={onClose}>
+                  Kitchen
                 </Link>
-                <Link as={NavLink} to="/feedback" color="black" _hover={{ textDecoration: "none" }} onClick={onClose}>
-                  Feedback
-                </Link>
-                <Link as={NavLink} to="/payment" color="black" _hover={{ textDecoration: "none" }} onClick={onClose}>
-                  Payment
+                <Link as={NavLink} to="/order-taking" color="black" _hover={{ textDecoration: "none" }} onClick={onClose}>
+                  Order Taking
                 </Link>
               </Flex>
             </DrawerBody>
