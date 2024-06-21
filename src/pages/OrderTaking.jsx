@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { Box, Heading, VStack, HStack, Button, Input, SimpleGrid, Image, Text, Wrap, WrapItem } from "@chakra-ui/react";
+import { Box, Heading, VStack, HStack, Button, Input, SimpleGrid, Image, Text, Wrap, WrapItem, useColorMode, useColorModeValue } from "@chakra-ui/react";
 
 const OrderTaking = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [order, setOrder] = useState([]);
+  const { toggleColorMode } = useColorMode();
+  const bg = useColorModeValue("white", "gray.800");
+  const color = useColorModeValue("black", "white");
 
   const categories = ["All", "Beer", "Whisky", "Vodka", "Gin", "Rum", "Tequila", "Brandy", "Liqueurs", "Signature Cocktails", "Coffee Stations", "Energy Drinks", "Soft Drinks and Mocktails", "Crazy Combos"];
   const menuItems = [
@@ -123,9 +126,12 @@ const OrderTaking = () => {
   };
 
   return (
-    <Box p={4} bg="white">
+    <Box p={4} bg={bg} color={color}>
       <Heading as="h1" mb={4}>Order Taking</Heading>
       <VStack spacing={4} align="start">
+        <Button onClick={toggleColorMode} mb={4}>
+          Toggle {useColorModeValue("Dark", "Light")} Mode
+        </Button>
         <Input 
           placeholder="Search for items..." 
           value={searchQuery} 
@@ -152,7 +158,7 @@ const OrderTaking = () => {
               borderRadius="md" 
               onClick={() => addToOrder(item)}
               cursor="pointer"
-              bg="white"
+              bg={bg}
             >
               <Image src={item.image} alt={item.name} mb={4} />
               <Heading as="h3" size="md">{item.name}</Heading>

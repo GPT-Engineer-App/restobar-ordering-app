@@ -12,7 +12,7 @@ const colors = {
     500: "#c77dff",
   },
   background: {
-    light: "#D3D3D3", // Light grey color
+    dark: "#333333", // Dark grey color
   },
 };
 
@@ -21,12 +21,12 @@ const theme = extendTheme({
   styles: {
     global: {
       "html, body": {
-        backgroundColor: "background.light",
+        backgroundColor: "background.dark",
       },
     },
   },
   config: {
-    initialColorMode: "light",
+    initialColorMode: "dark",
     useSystemColorMode: false,
   },
 });
