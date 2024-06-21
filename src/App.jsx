@@ -1,9 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Index from "./pages/Index.jsx";
-import Menu from "./pages/Menu.jsx";
+import Bar from "./pages/Bar.jsx";
+import Kitchen from "./pages/Kitchen.jsx";
 import OrderTaking from "./pages/OrderTaking.jsx";
-import Feedback from "./pages/Feedback.jsx";
-import Payment from "./pages/Payment.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 
@@ -12,11 +10,9 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route exact path="/" element={<Index />} />
-        <Route exact path="/menu" element={<Menu />} />
-        <Route exact path="/feedback" element={<Feedback />} />
+        <Route exact path="/" element={<Bar />} />
+        <Route exact path="/kitchen" element={<Kitchen />} />
         <Route exact path="/order-taking" element={<OrderTaking />} />
-        <Route exact path="/payment" element={<Payment />} />
       </Routes>
       <Footer />
     </Router>

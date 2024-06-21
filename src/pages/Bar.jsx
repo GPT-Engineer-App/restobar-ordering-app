@@ -1,9 +1,9 @@
 import { Box, Heading, VStack, Text, SimpleGrid, Image, useColorModeValue } from "@chakra-ui/react";
 
-const Menu = () => {
+const Bar = () => {
   const categories = [
-    { name: "Popular", items: [{ name: "Cream Pancake", price: "$12.00", image: "/images/cream-pancake.jpg", color: "red" }, { name: "White Source Pasta", price: "$12.00", image: "/images/white-source-pasta.jpg", color: "orange" }] },
-    { name: "Starter", items: [{ name: "Farm Ville Pizza", price: "$12.00", image: "/images/farm-ville-pizza.jpg", color: "green" }] },
+    { name: "Beer", items: [{ name: "Heineken", price: "$5.00", image: "/images/beer.jpg" }, { name: "Corona", price: "$6.00", image: "/images/beer.jpg" }] },
+    { name: "Whisky", items: [{ name: "Jack Daniels", price: "$8.00", image: "/images/whisky.jpg" }] },
     // Add more categories and items as needed
   ];
 
@@ -12,7 +12,7 @@ const Menu = () => {
 
   return (
     <Box p={4} bg={bg} color={color}>
-      <Heading as="h1" mb={4}>Menu</Heading>
+      <Heading as="h1" mb={4}>Bar Menu</Heading>
       {categories.map((category) => (
         <Box key={category.name} mb={6}>
           <Heading as="h2" size="lg" mb={4}>{category.name}</Heading>
@@ -31,4 +31,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default Bar;
