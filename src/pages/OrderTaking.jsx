@@ -152,7 +152,7 @@ const OrderTaking = () => {
               borderRadius="md" 
               onClick={() => addToOrder(item)}
               cursor="pointer"
-              bg={item.color}
+              bg="white"
             >
               <Image src={item.image} alt={item.name} mb={4} />
               <Heading as="h3" size="md">{item.name}</Heading>
