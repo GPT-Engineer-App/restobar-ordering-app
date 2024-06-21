@@ -2,7 +2,7 @@ import { Box, Heading, VStack, Text, SimpleGrid, Image, useColorModeValue } from
 
 const Bar = () => {
   const categories = [
-    { name: "Beer", items: [{ name: "Heineken", price: "$5.00", image: "/images/beer.jpg" }, { name: "Corona", price: "$6.00", image: "/images/beer.jpg" }] },
+    { name: "Beer", items: [{ name: "Heineken", price: "$5.00", image: "/images/heineken.jpg" }, { name: "Corona", price: "$6.00", image: "/images/corona.jpg" }] },
     { name: "Whisky", items: [{ name: "Jack Daniels", price: "$8.00", image: "/images/whisky.jpg" }] },
     // Add more categories and items as needed
   ];
